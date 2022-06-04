@@ -27,13 +27,21 @@
 
 ## Инструкция по запуску
 
-Необходимо иметь: Java 8+, Gradle
+### Запуск с Java
+
+Необходимо иметь: Java 8+, Gradle 4+
 
 В консоли прописываем:
 - ```gradle clean bootJar```
 - ```java -jar ./build/libs/TestTaskAlfaBank-1.0-SNAPSHOT.jar```
 
-Endpoint'ы в браузере:
+### Запуск с Docker
+
+В консоли прописываем:
+- ```docker build -t alfa-test-task:1.0-SNAPSHOT .```
+- ```docker run -p 8080:8080 alfa-test-task:1.0-SNAPSHOT```
+
+### После запуска сервиса с помощью Java/Docker - заходим в бразуер по следующему Endpoint'у:
 - http://localhost:8080/{currency}/show-gif
 
 ## Список поддерживаемых валют
