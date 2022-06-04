@@ -23,8 +23,6 @@ public class MainController {
         try {
             String gif = giphyService
                     .showGifPageByExchangeStatus(exchangeService.getExchangeStatusByCurrency(currency));
-            System.out.println(exchangeService.getExchangeStatusByCurrency(currency));
-            System.out.println(gif);
             return ResponseEntity.ok(gif);
         } catch (NoSuchCurrencyException e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
